@@ -22,7 +22,11 @@ set -eo pipefail
 PROGNAME=$(basename $0)
 PROGPATH=$(echo $0 | sed -e 's,[\\/][^\\/][^\\/]*$,,')
 
-. $PROGPATH/utils.sh
+STATE_OK=0
+STATE_WARNING=1
+STATE_CRITICAL=2
+STATE_UNKNOWN=3
+STATE_DEPENDENT=4
 
 fail() {
   local msg="$@"
