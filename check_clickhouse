@@ -31,7 +31,7 @@ STATE_DEPENDENT=4
 fail() {
   local msg="$@"
   echo "${msg}" 1>&2
-  exit ${STATE_UNKNOWN}
+  exit ${STATE_CRITICAL}
 }
 
 # Commands
