@@ -59,9 +59,9 @@ query() {
   local sql="$1"
   local cmd="${CHCMD} --format_csv_delimiter |"
   [ -z "$LOG_QUERIES" ] || cmd="${cmd} --log_queries ${LOG_QUERIES}"
-  [ -z "$CH_HOST" ]     || cmd="${cmd} -h '${CH_HOST}'"
-  [ -z "$CH_USER" ]     || cmd="${cmd} -u '${CH_USER}'"
-  [ -z "$CH_PASS" ]     || cmd="${cmd} --password '${CH_PASS}'"
+  [ -z "$CH_HOST" ]     || cmd="${cmd} -h ${CH_HOST}"
+  [ -z "$CH_USER" ]     || cmd="${cmd} -u ${CH_USER}"
+  [ -z "$CH_PASS" ]     || cmd="${cmd} --password ${CH_PASS}"
   ${cmd} -q "${sql}" 2> /dev/null
 }
 
